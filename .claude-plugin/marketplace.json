@@ -1,0 +1,27 @@
+{
+  "name": "deepvalue-tase",
+  "owner": {
+    "name": "DeepValue",
+    "email": "hello@deepvalue.co.il"
+  },
+  "plugins": [
+    {
+      "name": "deepvalue-tase",
+      "source": "./",
+      "description": "Professional financial analysis tools for the Israeli stock market (TASE). Provides branded Hebrew investment theses, financial report analysis, announcement monitoring, and company comparisons.",
+      "homepage": "https://deepvalue.co.il",
+      "repository": "https://github.com/deepvalueinvesting/deep-value-tase-plugin",
+      "keywords": ["tase", "israeli-stocks", "tel-aviv-stock-exchange", "financial-analysis", "investment-research", "equity-research", "stock-screening"],
+      "category": "finance",
+      "skills": [
+        "./skills/tase-analysis",
+        "./skills/deep-value-methodology",
+        "./skills/build-thesis",
+        "./skills/analyze-report",
+        "./skills/analyze-announcements",
+        "./skills/analyze-orders",
+        "./skills/compare-companies"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "deepvalue": {
+      "type": "url",
+      "url": "https://financials.deepvalue.co.il/mcp"
+    }
+  }
+}

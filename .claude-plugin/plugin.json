@@ -1,0 +1,12 @@
+{
+  "name": "deepvalue-tase",
+  "version": "1.0.0",
+  "description": "Professional financial analysis tools for the Israeli stock market (TASE). Provides branded Hebrew investment theses, financial report analysis, announcement monitoring, and company comparisons.",
+  "author": {
+    "name": "DeepValue",
+    "url": "https://deepvalue.co.il"
+  },
+  "homepage": "https://deepvalue.co.il",
+  "keywords": ["finance", "tase", "israel", "stocks", "hebrew", "value-investing"],
+  "mcpServers": "./.mcp.json"
+}
