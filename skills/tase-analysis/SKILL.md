@@ -15,16 +15,17 @@ Expert knowledge for analyzing Israeli public companies listed on the Tel Aviv S
 - Dividend indices: תל-דיב (166), תל דיב אריסטוקרט (200)
 
 ### Trading Hours
-- Pre-opening: 09:00-09:45 (random opening phase)
-- Continuous trading: 09:45-17:14
-- Closing auction: 17:14-17:25 (random close)
-- Post-market: 17:25-17:30
-- Sunday through Thursday (no weekend trading)
+- Monday through Thursday: 10:00-17:35
+- Friday: 10:00-14:00
+- No weekend trading (Saturday-Sunday)
+- Source: https://www.tase.co.il/he/content/about/tradingdays_change
 
 ### Currency
-All financial data is in Israeli New Shekel (₪ / ILS).
-Format numbers as: ₪1,234,567 (thousands separator: comma).
-Large amounts: מיליוני ₪ (millions), מיליארדי ₪ (billions).
+Most financial data is in Israeli New Shekel (₪ / ILS), but some companies report in foreign currencies.
+The tool returns a `currency` field per metric value — always check it before displaying data.
+Examples of USD reporters: אלביט מערכות, נקסט ויז'ן. Other companies may report in EUR.
+Format ILS as: ₪1,234,567 | USD as: $1,234,567 | EUR as: €1,234,567.
+Large amounts: מיליוני ₪/$/€ (millions), מיליארדי ₪/$/€ (billions).
 
 ## Israeli IFRS Reporting
 
@@ -37,9 +38,10 @@ Large amounts: מיליוני ₪ (millions), מיליארדי ₪ (billions).
 ### Key IFRS Differences for Israeli Companies
 - Real estate: Investment property often at fair value (IAS 40)
 - Defense: Long-term contract revenue recognition (IFRS 15)
-- Banks: Expected credit loss model (IFRS 9)
-- Insurance: IFRS 17 for insurance contracts
-- Dual-listed companies may also file with SEC (20-F)
+- Banks: Exempt from IFRS — follow Bank of Israel reporting requirements based on US GAAP
+- Insurance: IFRS 17 for insurance contracts (effective January 2025, alongside IFRS 9)
+- High-tech companies: May apply US GAAP (with IFRS reconciliation) if meeting specified revenue/ownership conditions
+- Dual-listed companies: May file using US GAAP, UK-adopted IAS, or other recognized standards (e.g., SEC 20-F)
 
 ### Financial Statement Structure (Hebrew Terms)
 | Hebrew | English |
