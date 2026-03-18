@@ -47,3 +47,7 @@ URL: https://financials.deepvalue.co.il/mcp
 /analyze-announcements טבע
 /compare-companies אלביט רפאל
 ```
+
+## Contact
+
+Questions or feedback? Reach us at deepvalueil@gmail.com
