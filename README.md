@@ -8,11 +8,14 @@ Professional financial analysis tools for the Israeli stock market (TASE).
 - `/build-thesis <company>` — Build a comprehensive Hebrew investment thesis
 - `/analyze-report <company>` — Deep-dive into the latest financial report
 - `/analyze-announcements <company>` — Analyze Maya regulatory announcements
+- `/analyze-orders <company>` — Analyze order flow patterns, compare to prior periods, and assess revenue impact
 - `/compare-companies <company1> <company2>` — Side-by-side company comparison
+- `/monitor-watchlist` — Generate a personalized Hebrew morning brief for your watchlist companies
 
 ### Skills
-- **tase-analysis** — TASE market structure, Israeli IFRS, Maya system, Hebrew formatting
+- **tase-analysis** — TASE market structure, Israeli IFRS, Maya regulatory system
 - **deep-value-methodology** — Value investing principles, screening metrics, red flags, scoring
+- **hebrew-quality** — Hebrew language quality, grammar, formatting, financial terminology, self-review checklist
 
 ### MCP Server
 Connects to DeepValue's remote MCP server with 48+ financial data tools including:
@@ -21,6 +24,8 @@ Connects to DeepValue's remote MCP server with 48+ financial data tools includin
 - Stock screening with 100+ metrics
 - Chart generation with Hebrew RTL support
 - Maya announcements and corporate events
+- Order backlog and dividend history
+- Index components and historical prices
 
 ## Installation
 
@@ -45,7 +50,9 @@ URL: https://financials.deepvalue.co.il/mcp
 /build-thesis אלביט
 /analyze-report בנק לאומי
 /analyze-announcements טבע
+/analyze-orders אלביט
 /compare-companies אלביט רפאל
+/monitor-watchlist
 ```
 
 ## Contact
