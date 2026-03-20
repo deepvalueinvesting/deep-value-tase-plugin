@@ -43,27 +43,6 @@ Large amounts: מיליוני ₪/$/€ (millions), מיליארדי ₪/$/€ (
 - High-tech companies: May apply US GAAP (with IFRS reconciliation) if meeting specified revenue/ownership conditions
 - Dual-listed companies: May file using US GAAP, UK-adopted IAS, or other recognized standards (e.g., SEC 20-F)
 
-### Financial Statement Structure (Hebrew Terms)
-| Hebrew | English |
-|--------|---------|
-| דוח רווח והפסד | Income Statement |
-| מאזן | Balance Sheet |
-| דוח תזרים מזומנים | Cash Flow Statement |
-| הכנסות | Revenue |
-| רווח גולמי | Gross Profit |
-| רווח תפעולי | Operating Profit |
-| EBITDA | EBITDA |
-| רווח נקי | Net Profit |
-| נכסים שוטפים | Current Assets |
-| נכסים לא שוטפים | Non-Current Assets |
-| התחייבויות שוטפות | Current Liabilities |
-| הון עצמי | Shareholders' Equity |
-| תזרים מפעילות שוטפת | Operating Cash Flow |
-| תזרים מפעילות השקעה | Investing Cash Flow |
-| תזרים מפעילות מימון | Financing Cash Flow |
-| רווח למניה | Earnings Per Share (EPS) |
-| דיבידנד | Dividend |
-
 ## Maya Regulatory System
 
 Maya (מאי"ה) is the TASE electronic filing system. Key form types:
@@ -89,26 +68,6 @@ When generating HTML documents, follow the **document-design** reference (`refer
 - Heebo font from Google Fonts
 - `dir="rtl"` and `lang="he"` on `<html>`
 
-## Hebrew Formatting Rules
+## Hebrew Language & Formatting
 
-### Text Direction
-- All analysis output must be in Hebrew (RTL)
-- Numbers remain LTR within Hebrew text
-- Percentages: 15.2% (not %15.2)
-- Currency: ₪1,234 (shekel sign before number)
-
-### Professional Tone
-- Use formal Hebrew (שפה עילית)
-- Financial terminology should match ISA/TASE conventions
-- Dates: DD.MM.YYYY or DD בחודש YYYY
-- Quarters: Q1, Q2, Q3, Q4 (English abbreviations are standard)
-
-### Analysis Structure
-Hebrew financial analysis follows this standard order:
-1. תקציר מנהלים (Executive Summary)
-2. סקירת החברה (Company Overview)
-3. ניתוח פיננסי (Financial Analysis)
-4. מיצוב תחרותי (Competitive Position)
-5. תמחור ושווי (Valuation)
-6. סיכונים (Risks)
-7. סיכום והמלצה (Summary & Recommendation)
+For all Hebrew language, formatting, and terminology guidelines, see the **hebrew-quality** skill.

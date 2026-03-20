@@ -99,6 +99,16 @@ Below is a complete working HTML document that demonstrates the exact design. Yo
             border-bottom: 1px solid #eaecee;
         }
 
+        /* Numeric values must render LTR so minus signs appear on the left side of the number.
+           Apply this class to any <td> containing a number (negative or positive). */
+        tbody td.num {
+            direction: ltr;
+            text-align: right;
+        }
+
+        /* For inline negative numbers inside Hebrew narrative text (e.g., "הכנסות -27%"),
+           wrap them in <span dir="ltr"> to force the minus sign to the left side. */
+
         tbody tr:nth-child(even) {
             background: #f8f9fa;
         }
@@ -270,7 +280,11 @@ Below is a complete working HTML document that demonstrates the exact design. Yo
 
 **Metric boxes** — ALWAYS use `<span class="metric-box">` as small inline badges in a single flowing row. NEVER use CSS grid, flexbox grids, or large card layouts for metrics. The metric boxes are small, inline, and flow naturally in one row.
 
-**Tables** — ALWAYS have `<thead>` with dark blue background (`#1a5276`) and white text. ALWAYS use colored `<span class="badge badge-TYPE">` in the last column to categorize rows. Badge types: `badge-new` (green), `badge-expansion` (orange), `badge-framework` (blue), `badge-intl` (purple). Use `chain-highlight` class on `<tr>` for related order chains.
+**Tables** — ALWAYS have `<thead>` with dark blue background (`#1a5276`) and white text. ALWAYS use colored `<span class="badge badge-TYPE">` in the last column to categorize rows. Badge types: `badge-new` (green), `badge-expansion` (orange), `badge-framework` (blue), `badge-intl` (purple). Use `chain-highlight` class on `<tr>` for related order chains. **Numeric values**: Any `<td>` containing a number (positive, negative, percentage, currency) MUST use `class="num"` — this applies `direction: ltr` so minus signs and symbols render on the correct side while keeping the value right-aligned in the cell. **Inline negative numbers in narrative text** (e.g., "הכנסות -27%") MUST be wrapped in `<span dir="ltr">-27%</span>` to force the minus to the left side.
+
+**Currency** — The currency symbol ALWAYS goes to the LEFT of the number: ₪1,234 (NOT 1,234₪). Stock prices from TASE are in agorot — do NOT add ₪ to stock price columns.
+
+**Dates** — Date format is ALWAYS dd/MM/YYYY (e.g., 20/03/2026). Never use MM-DD or YYYY-MM-DD formats.
 
 **Sections** — EVERY section is wrapped in `<div class="section">` which gives it a white background, rounded corners, and subtle shadow. Section titles use `<h2>` with blue color and bottom border. NEVER use standalone headings outside of section cards. NEVER use vertical side bars or border-right indicators.
 

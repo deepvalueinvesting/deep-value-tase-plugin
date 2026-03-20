@@ -19,7 +19,8 @@ Before starting, ask the user:
 
 ## Skill Context
 
-Apply the **tase-analysis** skill for Hebrew formatting and IFRS conventions.
+Apply the **hebrew-quality** skill for Hebrew language quality, grammar, formatting, and financial terminology.
+Apply the **tase-analysis** skill for IFRS conventions and TASE market structure.
 Apply the **deep-value-methodology** skill for identifying red flags and quality indicators.
 
 ## Writing Style

@@ -19,7 +19,8 @@ Before starting, ask the user:
 
 ## Skill Context
 
-Apply the **tase-analysis** skill for Maya form types and Hebrew formatting.
+Apply the **hebrew-quality** skill for Hebrew language quality, grammar, formatting, and financial terminology.
+Apply the **tase-analysis** skill for Maya form types and TASE market structure.
 
 ## Writing Style
 

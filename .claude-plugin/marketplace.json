@@ -16,11 +16,13 @@
       "skills": [
         "./skills/tase-analysis",
         "./skills/deep-value-methodology",
+        "./skills/hebrew-quality",
         "./skills/build-thesis",
         "./skills/analyze-report",
         "./skills/analyze-announcements",
         "./skills/analyze-orders",
-        "./skills/compare-companies"
+        "./skills/compare-companies",
+        "./skills/monitor-watchlist"
       ]
     }
   ]
