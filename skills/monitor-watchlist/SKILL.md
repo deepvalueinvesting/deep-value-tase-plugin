@@ -21,9 +21,189 @@ Apply the **hebrew-quality** skill for Hebrew language quality, grammar, formatt
 Apply the **tase-analysis** skill for IFRS conventions and TASE market structure.
 Apply the **deep-value-methodology** skill for valuation frameworks, scoring principles, and red flags.
 
+**MANDATORY**: After generating the HTML, run the hebrew-quality self-review checklist. Specifically:
+- Replace ALL English column headers with Hebrew (Div Yield → תשואת דיבידנד, ROE → תשואה להון)
+- No invented words (קומפקטיבי, שוליים כוללים)
+- Currency symbol LEFT of number: ₪1,234
+- Every sentence grammatically correct and readable by native speaker
+
 ## Writing Style
 
 The output must be written as a professional narrative for a fund manager analyst reviewing a morning brief. No emojis. No bullet points. Each paragraph focuses on one key idea. Sections flow naturally with transition words (מילות קישור). Tables are used for data presentation — all commentary must be flowing text.
+
+## HTML Design (MANDATORY — DO NOT MODIFY)
+
+Copy the entire `<style>` block below into your HTML output **verbatim**. Do not add, remove, or modify any CSS rule. Do not create additional `<style>` blocks.
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Heebo', sans-serif;
+    background: #f8f9fa;
+    color: #2c3e50;
+    line-height: 1.85;
+    font-size: 15.5px;
+}
+
+.container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+
+.header {
+    background: linear-gradient(135deg, #1a5276 0%, #2c3e50 100%);
+    color: white;
+    padding: 35px 40px;
+    border-radius: 12px;
+    margin-bottom: 35px;
+}
+
+.header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.header .subtitle {
+    font-size: 15px;
+    opacity: 0.85;
+    font-weight: 300;
+}
+
+.header .date {
+    font-size: 13px;
+    opacity: 0.7;
+    margin-top: 10px;
+}
+
+.section {
+    background: white;
+    border-radius: 10px;
+    padding: 30px 35px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a5276;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #eaecee;
+}
+
+.section p {
+    margin-bottom: 14px;
+    text-align: justify;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    font-size: 14px;
+}
+
+thead th {
+    background: #1a5276;
+    color: white;
+    padding: 10px 12px;
+    text-align: right;
+    font-weight: 500;
+}
+
+tbody td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #eaecee;
+}
+
+tbody td.num {
+    direction: ltr;
+    text-align: right;
+}
+
+tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+tbody tr.chain-highlight {
+    background: #eaf2f8;
+}
+
+.metric-box {
+    display: inline-block;
+    background: #eaf2f8;
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin: 4px 6px 4px 0;
+    font-size: 14px;
+}
+
+.metric-box .label {
+    font-weight: 300;
+    font-size: 12px;
+    color: #5d6d7e;
+}
+
+.metric-box .value {
+    font-weight: 700;
+    color: #1a5276;
+}
+
+.chart-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.chart-container img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.disclaimer {
+    font-size: 13px;
+    color: #7f8c8d;
+    text-align: center;
+    padding: 20px 0 0;
+    margin-top: 10px;
+}
+
+.badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.badge-new { background: #d5f5e3; color: #1e8449; }
+.badge-expansion { background: #fdebd0; color: #b9770e; }
+.badge-framework { background: #d6eaf8; color: #2471a3; }
+.badge-intl { background: #f5eef8; color: #7d3c98; }
+
+.powered-by {
+    text-align: center;
+    font-size: 12px;
+    color: #aab7b8;
+    margin-top: 30px;
+}
+```
+
+**PROHIBITIONS — violating any of these is a critical failure:**
+- NEVER use Segoe UI or any font other than Heebo
+- NEVER use `max-width` greater than 860px
+- NEVER use CSS grid for metric boxes — use `display: inline-block`
+- NEVER use `border-right` on any element
+- NEVER create a `.narrative` class or colored background boxes for text
+- NEVER use yellow/warning styling for disclaimer
+- NEVER invent CSS classes not in the reference above
+- NEVER add a second `<style>` block or inline styles that override the above
 
 ## Workflow
 
@@ -63,11 +243,12 @@ Convert the user's lookback period to dates:
 ### Step 4 — Section 1: Market Snapshot (תמונת שוק)
 
 Aggregate metrics across the watchlist:
-- Total market cap of all watched companies
 - Median P/E ratio
 - Average dividend yield
 - Count of companies near 52-week high (within 5%)
 - Count of companies near 52-week low (within 5%)
+
+Do NOT show total market cap of the watchlist — it is a meaningless aggregate across diverse companies.
 
 Present as inline metric boxes (`<span class="metric-box">`).
 
@@ -75,6 +256,8 @@ Then render a table with **ALL** watchlist companies, sorted by market cap desce
 
 | חברה | מחיר | % משיא 52 שבועות | שווי שוק | מכפיל רווח | תשואת דיבידנד |
 |------|------|-------------------|----------|------------|---------------|
+
+**TABLE LIMIT**: This table MUST have exactly these 6 columns: חברה, מחיר, % משיא 52 שבועות, שווי שוק, מכפיל רווח, תשואת דיבידנד. Do NOT add ROE, ROA, D/E, CR, P/B, or EV/EBITDA — those belong in the Valuation Ranking table. Tables with more than 7 columns overflow the 860px container and break the PDF.
 
 For P/E, if earnings are negative show "הפסד" (not "שלילי" or a negative P/E number).
 
@@ -139,13 +322,15 @@ Render a table:
 | חברה | דגל | סוג | פירוט |
 |------|-----|-----|-------|
 
+Render one row per company-flag pair. If a company has 3 flags, it appears in 3 rows. Exactly 4 columns as specified. Do NOT group companies under flags. Do NOT create a 2-column summary table.
+
+After the table, write ONE narrative paragraph summarizing the most significant flags and what they imply for portfolio attention. Do NOT create individual colored boxes per flag category.
+
 Use badge classes: `badge-new` (green) for momentum, `badge-expansion` (orange) for valuation, `badge-framework` (blue) for price, `badge-intl` (purple) for health.
 
 Sort the table by flag severity: health flags first, then valuation, then price, then momentum. Within each category, sort alphabetically by company name.
 
 If there are more than 60 flags, show the top 60 and add a note above the table: "מוצגים 60 הדגלים המהותיים ביותר מתוך [total]".
-
-Follow with a narrative paragraph summarizing the most significant flags and what they imply for portfolio attention.
 
 ### Step 7 — Section 4: Valuation Ranking (דירוג אטרקטיביות)
 
@@ -186,6 +371,8 @@ Render a ranked table sorted by composite score descending:
 | דירוג | חברה | חוסן פיננסי | צמיחה | רווחיות | תמחור | ציון משוקלל |
 |-------|------|-------------|-------|---------|-------|------------|
 
+**CRITICAL**: Column headers MUST be full Hebrew as shown above: דירוג, חברה, חוסן פיננסי, צמיחה, רווחיות, תמחור, ציון משוקלל. NEVER use abbreviations like FS, GR, PR, VL in headers OR narrative text. NEVER use English headers like "Financial Strength" or "Growth" in the table.
+
 Color-code scores in the table:
 - 8-10: green text (`color: #1e8449`)
 - 6-7.9: blue text (`color: #2471a3`)
@@ -206,9 +393,17 @@ Generate 2 branded charts using `generate_chart`:
 
 Embed each chart in the HTML using: `<img src="data:image/png;base64,{image_base64}" alt="[Hebrew chart title]">` with the `image_base64` field from `generate_chart`. Always include `alt` text matching the chart title. **Never use `image_url`** — it is blocked in sandbox environments. **Never regenerate charts with matplotlib** — always use `image_base64` from `generate_chart`.
 
+**Chart labels**: Do NOT use `x_label: "חברה"` — it is self-explanatory and bleeds into the legend area. Leave `x_label` empty for company-name charts.
+
 ### Step 9 — Assemble HTML Brief
 
-Build the complete HTML document. **Read `skills/tase-analysis/references/document-design.md` and copy its exact CSS and HTML structure** — do not invent your own design. The reference contains the complete working CSS that must be used verbatim (Heebo font, `#1a5276` color scheme, inline `<span class="metric-box">` for metrics, `.section` cards, `.badge-*` classes, `.chart-container`, `.disclaimer`).
+Build the complete HTML document. **Use the exact CSS from the 'HTML Design' section above. Do not modify it.** The CSS contains the complete working design (Heebo font, `#1a5276` color scheme, inline `<span class="metric-box">` for metrics, `.section` cards, `.badge-*` classes, `.chart-container`, `.disclaimer`).
+
+**Narrative text**: Plain `<p>` inside `<div class='section'>`. NEVER create `.narrative` class, colored backgrounds, or `border-right`/`border-left` on text.
+
+**Disclaimer**: `.disclaimer` class — plain gray centered text (`color: #7f8c8d`). NO background, NO borders, NO yellow.
+
+**Footer**: `<div class='powered-by'>Powered by DeepValue | נתונים עד [date]</div>`
 
 **Document structure:**
 
@@ -245,7 +440,7 @@ Footer
 
 **HTML requirements:**
 - `dir="rtl"`, `lang="he"`
-- Use the exact CSS from `skills/tase-analysis/references/document-design.md`
+- Use the exact CSS from the 'HTML Design' section above — do not invent your own
 - Metric boxes as inline `<span class="metric-box">` (never CSS grid cards)
 - Tables with `<thead>` dark blue background and badge-categorized rows
 - Charts as base64 `<img>` inside `<div class="chart-container">`
