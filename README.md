@@ -29,20 +29,35 @@ Connects to DeepValue's remote MCP server with 48+ financial data tools includin
 
 ## Installation
 
-### From GitHub Marketplace (recommended)
+### Claude Web / Mobile (Connectors)
+
+1. Open **Settings** → **Customize** → **Connectors**
+2. Click **Add Custom Connector**
+3. Fill in:
+   - **Name:** `DeepValue`
+   - **URL:** `https://financials.deepvalue.co.il/mcp`
+4. Approve OAuth access from DeepValue
+
+![Claude Web Connector Setup](https://mcp.deepvalue.co.il/instructions/how_to_add_to_claude_web.png)
+
+> Mobile works the same way — open Settings → Customize → Connectors.
+
+### Claude Code (Plugin)
 
 ```
 /plugin marketplace add deepvalueinvesting/deep-value-tase-plugin
 /plugin install deepvalue-tase@deepvalueinvesting
 ```
 
-To enable auto-updates: open `/plugin` → Marketplaces → Enable auto-update for `deepvalueinvesting`.
+> **Tip:** To enable auto-updates, open `/plugin` → Marketplaces → Enable auto-update for `deepvalueinvesting`.
 
-### Direct MCP Server (works in any MCP client)
+### Claude Co-Work (Plugin)
 
-```
-URL: https://financials.deepvalue.co.il/mcp
-```
+1. Open Claude Desktop and switch to the **Cowork** tab
+2. Click **Customize** in the left sidebar
+3. Click the **+** button → **Add marketplace from GitHub**
+4. Enter: `deepvalueinvesting/deep-value-tase-plugin`
+5. Browse the marketplace and click **Install** on the DeepValue plugin
 
 ## Usage Examples
 
