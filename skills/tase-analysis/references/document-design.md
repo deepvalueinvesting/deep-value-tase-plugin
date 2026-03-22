@@ -17,6 +17,29 @@ Below is a complete working HTML document that demonstrates the exact design. Yo
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
+        @page {
+            size: A4;
+            margin: 15mm 0 8mm 0;
+            background-color: white;
+
+            @bottom-center {
+                content: counter(page);
+                font-family: 'Heebo', sans-serif;
+                font-size: 11px;
+                color: #aab7b8;
+                padding-bottom: 3mm;
+            }
+        }
+
+        @page :first {
+            margin: 0;
+            background-color: #f8f9fa;
+
+            @bottom-center {
+                content: none;
+            }
+        }
+
         body {
             font-family: 'Heebo', sans-serif;
             background: #f8f9fa;
@@ -26,17 +49,17 @@ Below is a complete working HTML document that demonstrates the exact design. Yo
         }
 
         .container {
-            max-width: 860px;
-            margin: 0 auto;
-            padding: 40px 30px;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
         }
 
         .header {
             background: linear-gradient(135deg, #1a5276 0%, #2c3e50 100%);
             color: white;
-            padding: 35px 40px;
-            border-radius: 12px;
-            margin-bottom: 35px;
+            padding: 35px 75px;
+            border-radius: 0;
+            margin-bottom: 12px;
         }
 
         .header h1 {
@@ -57,12 +80,16 @@ Below is a complete working HTML document that demonstrates the exact design. Yo
             margin-top: 10px;
         }
 
-        .section {
+        /* Single white content body wraps ALL sections below the header */
+        .content-body {
             background: white;
-            border-radius: 10px;
-            padding: 30px 35px;
-            margin-bottom: 24px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            border-radius: 0;
+            padding: 50px 75px 40px;
+        }
+
+        /* Sections are separated by spacing only, no divider lines between sections */
+        .section {
+            margin-bottom: 28px;
         }
 
         .section h2 {
@@ -72,6 +99,14 @@ Below is a complete working HTML document that demonstrates the exact design. Yo
             margin-bottom: 16px;
             padding-bottom: 8px;
             border-bottom: 2px solid #eaecee;
+        }
+
+        .section h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a5276;
+            margin-bottom: 12px;
+            margin-top: 20px;
         }
 
         .section p {
@@ -121,9 +156,9 @@ Below is a complete working HTML document that demonstrates the exact design. Yo
             display: inline-block;
             background: #eaf2f8;
             border-radius: 8px;
-            padding: 8px 16px;
-            margin: 4px 6px 4px 0;
-            font-size: 14px;
+            padding: 6px 12px;
+            margin: 3px 4px 3px 0;
+            font-size: 13px;
         }
 
         .metric-box .label {
@@ -145,15 +180,21 @@ Below is a complete working HTML document that demonstrates the exact design. Yo
         .chart-container img {
             max-width: 100%;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 75px;
+            margin-top: 20px;
+            border-radius: 0;
         }
 
         .disclaimer {
-            font-size: 13px;
+            font-size: 12px;
             color: #7f8c8d;
             text-align: center;
-            padding: 20px 0 0;
-            margin-top: 10px;
+            padding: 0;
+            margin: 0;
         }
 
         .badge {
@@ -171,20 +212,23 @@ Below is a complete working HTML document that demonstrates the exact design. Yo
 
         .powered-by {
             text-align: center;
-            font-size: 12px;
+            font-size: 11px;
             color: #aab7b8;
-            margin-top: 30px;
+            margin-top: 8px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- HEADER: gradient banner with title, subtitle, date -->
+        <!-- HEADER: gradient banner with title, subtitle, date (stands alone on gray bg) -->
         <div class="header">
             <h1>ניתוח הזמנות — גילת טלקום גלובל בע"מ (GLTL)</h1>
             <div class="subtitle">סקטור תקשורת ומדיה | שירותי תקשורת לוויינית</div>
             <div class="date">תאריך הניתוח: 17 במרץ 2026 | תקופת ניתוח: YTD 2026 מול 2025</div>
         </div>
+
+        <!-- CONTENT-BODY: single white box wrapping ALL sections -->
+        <div class="content-body">
 
         <!-- SECTION: market snapshot with INLINE metric boxes (not grid cards!) -->
         <div class="section">
@@ -264,19 +308,29 @@ Below is a complete working HTML document that demonstrates the exact design. Yo
             <p>גורם שני הוא ההסכם האסטרטגי...</p>
         </div>
 
-        <!-- DISCLAIMER: plain centered gray text. NO borders. NO colored boxes. -->
-        <div class="disclaimer">
-            ניתוח זה מבוסס על דיווחים רגולטוריים בלבד ואינו מהווה ייעוץ השקעות. יש לבצע בדיקה עצמאית לפני קבלת החלטות השקעה.
-        </div>
+        </div><!-- end content-body -->
 
-        <div class="powered-by">
-            Powered by DeepValue | נתונים עד 17.3.2026
+        <!-- FOOTER: gray band outside the white content body -->
+        <div class="footer">
+            <div class="disclaimer">
+                ניתוח זה מבוסס על דיווחים רגולטוריים בלבד ואינו מהווה ייעוץ השקעות. יש לבצע בדיקה עצמאית לפני קבלת החלטות השקעה.
+            </div>
+
+            <div class="powered-by">
+                Powered by DeepValue | נתונים עד 17.3.2026
+            </div>
         </div>
     </div>
 </body></html>
 ```
 
 ## Critical Design Rules
+
+**Layout** — The document has THREE top-level visual blocks: (1) the **header** gradient banner (navy blue), (2) a single **content-body** white box containing ALL sections, and (3) a **footer** gray box with disclaimer and powered-by text. The header and footer are gray/navy boxes that mirror each other visually. Do NOT create separate white boxes per section. Sections inside the content-body are separated by vertical spacing (`margin-bottom: 28px`) only — no divider lines between sections.
+
+**Page margins** — Page 1 has `@page :first { margin: 0; background-color: #f8f9fa; }` so the header is flush to the top. Pages 2+ have `@page { margin: 15mm 0 8mm 0; background-color: white; }` — white top margin blends with the content body, 8mm bottom margin holds the page number.
+
+**Page numbers** — Appear centered at the bottom of every page except the first. Use `@page { @bottom-center { content: counter(page); } }` and `@page :first { @bottom-center { content: none; } }`.
 
 **Metric boxes** — ALWAYS use `<span class="metric-box">` as small inline badges in a single flowing row. NEVER use CSS grid, flexbox grids, or large card layouts for metrics. The metric boxes are small, inline, and flow naturally in one row.
 
@@ -286,12 +340,14 @@ Below is a complete working HTML document that demonstrates the exact design. Yo
 
 **Dates** — Date format is ALWAYS dd/MM/YYYY (e.g., 20/03/2026). Never use MM-DD or YYYY-MM-DD formats.
 
-**Sections** — EVERY section is wrapped in `<div class="section">` which gives it a white background, rounded corners, and subtle shadow. Section titles use `<h2>` with blue color and bottom border. NEVER use standalone headings outside of section cards. NEVER use vertical side bars or border-right indicators.
+**Sections** — EVERY section is wrapped in `<div class="section">` inside the content-body. Sections are separated by spacing only (`margin-bottom: 28px`), NO divider lines between sections. Section titles use `<h2>` with blue color and bottom border. Sub-section titles use `<h3>`. NEVER use standalone headings outside of sections. NEVER use vertical side bars or border-right indicators.
 
 **Charts** — Use `<div class="chart-container"><img src="data:image/png;base64,{image_base64}"></div>`. Charts come from `generate_chart` tool only. NEVER use `image_url`. NEVER regenerate with matplotlib.
 
-**Disclaimer** — Plain centered gray text. NO borders, NO background colors, NO colored callout boxes. Just `.disclaimer` class with `color: #7f8c8d; text-align: center`.
+**Footer** — Wrap disclaimer and powered-by in `<div class="footer">` — a gray box (`#f8f9fa`) mirroring the header design, OUTSIDE the content-body white box. Fixed height, not meant to fill to page bottom.
 
-**Footer** — `<div class="powered-by">Powered by DeepValue | נתונים עד [date]</div>`
+**Disclaimer** — Plain centered gray text inside the footer. `color: #7f8c8d; text-align: center; font-size: 12px`.
 
-**DO NOT** — No empty sections. No grid card metrics. No border-right on headings. No inventing your own CSS.
+**Powered-by** — `<div class="powered-by">Powered by DeepValue | נתונים עד [date]</div>` — inside the footer.
+
+**DO NOT** — No empty sections. No grid card metrics. No border-right on headings. No inventing your own CSS. No separate white boxes per section.
