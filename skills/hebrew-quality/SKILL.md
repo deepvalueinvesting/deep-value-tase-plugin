@@ -142,6 +142,7 @@ Do not invent Hebrew words or use corrupted forms.
 - ❌ "בגבי" → ✅ "לגבי" or "בנוגע ל"
 - ❌ "הולוקציה" → ✅ "הקצאה"
 - ❌ "שוליים כוללים" (for gross margin) → ✅ "שיעור רווח גולמי"
+- ❌ "רבעונות" → ✅ "רבעונים" (quarters — masculine plural)
 
 ### Rule 4: No Awkward Calques
 Do not translate English expressions word-for-word into Hebrew.
