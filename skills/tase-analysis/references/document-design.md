@@ -13,7 +13,11 @@ Below is a complete working HTML document that demonstrates the exact design. Yo
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ניתוח הזמנות — גילת טלקום גלובל (GLTL)</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap');
+        /* FONT EMBEDDING: Read the file skills/tase-analysis/references/heebo-font.css
+           and paste its @font-face rules here. This embeds the Heebo font as base64
+           so it works in sandboxed environments without internet access.
+           Do NOT use @import url('https://fonts.googleapis.com/...') — it fails in sandbox. */
+        /* {{PASTE_HEEBO_FONT_FACE_RULES_HERE}} */
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -325,6 +329,8 @@ Below is a complete working HTML document that demonstrates the exact design. Yo
 ```
 
 ## Critical Design Rules
+
+**Font** — The document uses the **Heebo** font (weights 300, 400, 500, 700). Do NOT use `@import url('https://fonts.googleapis.com/...')` — it fails in sandboxed environments. Instead, read the file `skills/tase-analysis/references/heebo-font.css` and paste its `@font-face` rules directly into the `<style>` block. This embeds the font as base64 so it works offline.
 
 **Layout** — The document has THREE top-level visual blocks: (1) the **header** gradient banner (navy blue), (2) a single **content-body** white box containing ALL sections, and (3) a **footer** gray box with disclaimer and powered-by text. The header and footer are gray/navy boxes that mirror each other visually. Do NOT create separate white boxes per section. Sections inside the content-body are separated by vertical spacing (`margin-bottom: 28px`) only — no divider lines between sections.
 
